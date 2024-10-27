@@ -4,13 +4,9 @@ const routes = require('./routes');
 const init = async () => {
   const server = Hapi.server({
     port: 3000,
-    host: '0.0.0.0',
+    host: 'localhost',
     routes: {
-      cors: {
-        origin: ['http://notesapp-v1.dicodingacademy.com'], // Hanya izinkan origin tertentu
-        credentials: true, // Jika menggunakan cookie atau otentikasi
-        additionalHeaders: ['cache-control', 'x-requested-with'], // Tambahan header jika perlu
-      },
+      cors: ['*'],
     },
   });
   
